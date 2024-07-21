@@ -1,3 +1,5 @@
+import 'package:data_structures/linked_list.dart';
+
 /// Stack Data Structure Implementation
 
 // import 'package:data_structures/stack.dart';
@@ -55,3 +57,34 @@
 //   }
 //   return stack.isEmpty;
 // }
+
+/// Linked List Dats Structure Implementation
+
+void main() {
+  final list = LinkedList<int>();
+
+  // Adding values to a list
+
+  list.push(3);
+  list.push(2);
+  list.push(1);
+
+  var middleNode = list.nodeAt(1)!;
+  list.insertAfter(middleNode, 42);
+
+  /// removing values from a list
+  final poppedValue = list.pop();
+
+  print('Popped value $poppedValue');
+
+  final firstNode = list.nodeAt(0)!;
+  final removedValue = list.removeAfter(firstNode);
+
+  print('Removed value $removedValue');
+
+  for (final element in list) {
+    print(element);
+  }
+
+  print(list);
+}
